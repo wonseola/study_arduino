@@ -1,7 +1,7 @@
 #include <Servo.h>
 const int SERVO = 10;
 Servo servo;
-const int btn = 8;
+const int btn = 2;
 int state= 30;
 bool state_changed=false;
 void btnPressed(){
@@ -10,7 +10,6 @@ void btnPressed(){
 }
 
 void setup() {
-  // put your setup code here, to run once:
 pinMode(btn,INPUT);
 attachInterrupt(digitalPinToInterrupt(btn),btnPressed,RISING);
 servo.attach(SERVO);
@@ -19,7 +18,6 @@ delay(1000);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 if(state_changed){
   state_changed=false;
   servo.write(state);
