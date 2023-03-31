@@ -14,6 +14,7 @@ int states=0;
 void setup()
 {
   pinMode(btnStart, INPUT);
+  pinMode(6,OUTPUT);
 }
 void loop()
 {
@@ -33,6 +34,12 @@ void loop()
         tone(piezo, tones[i]);
         delay(tempo/2*beats[i]);
         noTone(piezo);
+      }
+      if(i%2==0){
+        digitalWrite(6,HIGH);
+      }
+      else{
+        digitalWrite(6,LOW);
       }
     }
   
