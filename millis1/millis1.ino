@@ -15,4 +15,3 @@ void loop() {
     digitalWrite(led,o);
   }
 }
-

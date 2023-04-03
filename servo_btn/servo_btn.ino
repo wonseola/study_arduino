@@ -1,5 +1,5 @@
 #include <Servo.h>
-const int SERVO = 10;
+const int SERVO = 8;
 Servo servo;
 const int btn = 2;
 int state= 30;
