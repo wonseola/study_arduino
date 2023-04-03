@@ -21,13 +21,14 @@ void loop() {
   unsigned long now2=millis();
    buttonState = digitalRead(buttonPin);
    if (buttonState == HIGH) {
-    if(now2 - prev2>= d2){  //13
+    if(now2 - prev2 >= d2){  //13
      prev2=now2;
      t2++;
      if(t2>1)t=0;
      digitalWrite(led2,t);
      }
    }
+  
 
     if(now - prev>= d){ // 6
      prev=now;
