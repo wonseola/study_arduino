@@ -26,12 +26,12 @@ void loop() {
   if(distance>=10 && distance<15){
     digitalWrite(led1,HIGH);
     tone(b, 262, 1000);
-    myservo.write(150);
+
   }
   else if(distance>=15 && distance<20){
     digitalWrite(led2,HIGH);
     tone(b, 294, 1000);
-
+    myservo.write(0);
   }
     else if(distance>=20 && distance<25){
     digitalWrite(led1,HIGH);
@@ -53,6 +53,10 @@ void loop() {
     write(led1,10);
     write(led2,10);
     tone(b, 700, 1000);
+        for(int p = 0 ; p<=180; p++){
+    myservo.write(p);
+    }
+    delay(200);
   }
   else{
     digitalWrite(led1,LOW);
