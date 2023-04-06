@@ -21,37 +21,37 @@ void loop() {
    
   if(distance>=10 && distance<15){
     digitalWrite(led1,HIGH);
-    tone(11, 262, 1000);
+    tone(b, 262, 1000);
   }
   else if(distance>=15 && distance<20){
     digitalWrite(led2,HIGH);
-    tone(11, 294, 1000);
+    tone(b, 294, 1000);
   }
     else if(distance>=20 && distance<25){
     digitalWrite(led1,HIGH);
-    tone(11, 330, 1000);
+    tone(b, 330, 1000);
   }
     else if(distance>=25 && distance<30){
     digitalWrite(led2,HIGH);
-    tone(11, 349, 1000);
+    tone(b, 349, 1000);
   }
     else if(distance>=30 && distance<35){
     digitalWrite(led1,HIGH);
-    tone(11, 392, 1000);
+    tone(b, 392, 1000);
   }
     else if(distance>=35 && distance<40){
     digitalWrite(led2,HIGH);
-    tone(11, 440, 1000);
+    tone(b, 440, 1000);
   }
     else if(distance>5 && distance<10){
     write(led1,10);
     write(led2,10);
-    tone(11, 700, 1000);
+    tone(b, 700, 1000);
   }
   else{
     digitalWrite(led1,LOW);
     digitalWrite(led2,LOW);
-    noTone(11);
+    noTone(b);
     }
 }
 
