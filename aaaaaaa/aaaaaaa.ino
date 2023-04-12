@@ -38,12 +38,12 @@ void loop() {
   for (int i = 0; i < sizeof(melody) / sizeof(melody[0]); i++) {
     int noteDuration = 1000 / noteDurations[i];
     tone(BUZZER_PIN, melody[i], noteDuration);
+    delay(noteDuration * 1.30);
     digitalWrite(LED1_PIN, random(2) == 0 ? LOW : HIGH); // LED1 ON 또는 OFF
     digitalWrite(LED2_PIN, random(2) == 0 ? LOW : HIGH); // LED2 ON 또는 OFF
     digitalWrite(LED3_PIN, random(2) == 0 ? LOW : HIGH); // LED3 ON 또는 OFF
     digitalWrite(LED4_PIN, random(2) == 0 ? LOW : HIGH); // LED4 ON 또는 OFF
     digitalWrite(LED5_PIN, random(2) == 0 ? LOW : HIGH); // LED5 ON 또는 OFF
-    delay(noteDuration * 1.30);
     noTone(BUZZER_PIN);
     digitalWrite(LED1_PIN, LOW); // 모든 LED 끄기
     digitalWrite(LED2_PIN, LOW);
