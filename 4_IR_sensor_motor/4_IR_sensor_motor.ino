@@ -13,7 +13,7 @@ int IR_R_data;
 void setup() {
   pinMode(motor_A1, OUTPUT);
   pinMode(motor_A2, OUTPUT);
-  pinMode(motor_B1, OUTPUT);
+  pinMode(motor_B1, OUTPUT);  
   pinMode(motor_B2, OUTPUT);
   pinMode(IR_L, INPUT);
   pinMode(IR_M, INPUT);
@@ -29,18 +29,12 @@ void loop() {
   IR_M_data = digitalRead(IR_M);
   IR_R_data = digitalRead(IR_R);
 
-  if (IR_L_data == 0 and IR_M_data == 1 and IR_R_data == 0) {
-    forward();
-  }
-  else if (IR_L_data == 1 and IR_M_data == 0 and IR_R_data == 0) {
-    left();
-  }
-  else if (IR_L_data == 0 and IR_M_data == 0 and IR_R_data == 1) {
-    right();
-  }
-  else if (IR_L_data == 1  and IR_R_data == 1) {
-    stop();
-  }
+  if (IR_L_data == 0 and IR_M_data == 1 and IR_R_data == 0) forward();
+  else if (IR_L_data == 1 and IR_M_data == 0 and IR_R_data == 0) left();
+  else if (IR_L_data == 0 and IR_M_data == 0 and IR_R_data == 1)  right();
+  else if (IR_L_data == 1  and IR_R_data == 1) stop();
+  else if (IR_L_data == 0 and IR_M_data == 1 and IR_R_data == 1)  tright();
+  else if (IR_L_data == 1 and IR_M_data == 0 and IR_R_data == 0)  tright();
 }
 
 
@@ -80,5 +74,12 @@ void stop() {
   digitalWrite(motor_A1, LOW);
   digitalWrite(motor_A2, LOW);
   digitalWrite(motor_B1, LOW);
+  digitalWrite(motor_B2, LOW);
+}
+
+void tright(){
+  digitalWrite(motor_A1, LOW);
+  digitalWrite(motor_A2, HIGH);
+  digitalWrite(motor_B1, HIGH);
   digitalWrite(motor_B2, LOW);
 }
