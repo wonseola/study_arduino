@@ -24,7 +24,6 @@ void setup() {
 
 
 void loop() {
-  //IR 센서 값을 읽어 출력해주는 코드
   IR_L_data = digitalRead(IR_L);
   IR_M_data = digitalRead(IR_M);
   IR_R_data = digitalRead(IR_R);
@@ -33,8 +32,9 @@ void loop() {
   else if (IR_L_data == 1 and IR_M_data == 0 and IR_R_data == 0) left();
   else if (IR_L_data == 0 and IR_M_data == 0 and IR_R_data == 1)  right();
   else if (IR_L_data == 1  and IR_R_data == 1) stop();
-  else if (IR_L_data == 0 and IR_M_data == 1 and IR_R_data == 1)  tright();
-  else if (IR_L_data == 1 and IR_M_data == 0 and IR_R_data == 0)  tright();
+  else if (IR_L_data == 0 and IR_M_data == 1 and IR_R_data == 1)  turn();
+  else if (IR_L_data == 1 and IR_M_data == 1 and IR_R_data == 0)  turn();
+  
 }
 
 
@@ -77,7 +77,7 @@ void stop() {
   digitalWrite(motor_B2, LOW);
 }
 
-void tright(){
+void turn(){
   digitalWrite(motor_A1, LOW);
   digitalWrite(motor_A2, HIGH);
   digitalWrite(motor_B1, HIGH);
