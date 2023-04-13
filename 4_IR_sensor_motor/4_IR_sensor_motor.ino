@@ -9,7 +9,6 @@ int IR_L_data;
 int IR_M_data;
 int IR_R_data;
 
-
 void setup() {
   pinMode(motor_A1, OUTPUT);
   pinMode(motor_A2, OUTPUT);
@@ -27,7 +26,6 @@ void loop() {
   IR_L_data = digitalRead(IR_L);
   IR_M_data = digitalRead(IR_M);
   IR_R_data = digitalRead(IR_R);
-
   if (IR_L_data == 0 and IR_M_data == 1 and IR_R_data == 0) forward();
   else if (IR_L_data == 1 and IR_M_data == 0 and IR_R_data == 0) left();
   else if (IR_L_data == 0 and IR_M_data == 0 and IR_R_data == 1)  right();
@@ -35,6 +33,8 @@ void loop() {
   else if (IR_L_data == 0 and IR_M_data == 1 and IR_R_data == 1)  turn();
   else if (IR_L_data == 1 and IR_M_data == 1 and IR_R_data == 0)  turn();
   
+
+
 }
 
 
