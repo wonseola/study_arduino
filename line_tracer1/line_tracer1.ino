@@ -44,6 +44,7 @@ void right () {
   digitalWrite(motor_A2, LOW);
   digitalWrite(motor_B1, LOW);
   digitalWrite(motor_B2, LOW);
+  Serial.println("right");
 }
 
 void left() {
@@ -52,6 +53,7 @@ void left() {
   digitalWrite(motor_A2, LOW);
   digitalWrite(motor_B1, HIGH);
   digitalWrite(motor_B2, LOW);
+  Serial.println("left");
 }
 
 void forward() {
@@ -60,6 +62,7 @@ void forward() {
   digitalWrite(motor_A2, LOW);
   digitalWrite(motor_B1, HIGH);
   digitalWrite(motor_B2, LOW);
+  Serial.println("go");
 }
 
 void backward() {
@@ -68,6 +71,7 @@ void backward() {
   digitalWrite(motor_A2, HIGH);
   digitalWrite(motor_B1, LOW);
   digitalWrite(motor_B2, HIGH);
+  Serial.println("back");
 }
 
 void stop() {
@@ -75,6 +79,7 @@ void stop() {
   digitalWrite(motor_A2, LOW);
   digitalWrite(motor_B1, LOW);
   digitalWrite(motor_B2, LOW);
+  Serial.println("stop");
 }
 
 void turn(){
@@ -82,4 +87,5 @@ void turn(){
   digitalWrite(motor_A2, HIGH);
   digitalWrite(motor_B1, HIGH);
   digitalWrite(motor_B2, LOW);
+  Serial.println("turn");
 }
