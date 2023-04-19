@@ -1,7 +1,7 @@
 #include <TimerOne.h>
 const int sev = 9;
-const int period=20000;
-const int minduty = (1024/20)*0.7;
+const int period=10000;
+const int minduty = 0;
 const int maxduty=(1024.20)*2.3;
 int angle = minduty;
 
@@ -21,8 +21,14 @@ void loop() {
       while (angle != duty) {
         if (angle < duty) {
           angle++;
+          if(angle==input){
+            angle=minduty;
+            Timer1.setPwmDuty(sev, minduty);
+          }
+          Serial.println(angle);
         } else {
           angle--;
+          Serial.println(angle);
         }
         Timer1.setPwmDuty(sev, angle);
         delay(30);
